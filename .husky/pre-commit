@@ -1,1 +1,3 @@
-pnpm lint-staged
+#!/bin/sh
+pnpm exec eslint "apps/**/*.{ts,tsx,js,jsx}"  --fix --ignore-pattern '**/dist/**'
+
