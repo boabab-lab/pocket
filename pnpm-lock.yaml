@@ -123,6 +123,9 @@ importers:
       '@sinclair/typebox':
         specifier: ^0.34.37
         version: 0.34.37
+      class-validators:
+        specifier: ^1.0.1
+        version: 1.0.1
       fastify:
         specifier: ^5.0.0
         version: 5.4.0
@@ -1119,6 +1122,9 @@ packages:
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
     engines: {node: '>=18'}
+
+  class-validators@1.0.1:
+    resolution: {integrity: sha512-eZq3QmGore9AjzSifMv1K2UwLvNl/cKowp0mQDiYt3CdSnVw+70g1kcHO47s+4VD/T9dVi/MgtrZmXtFndL3vQ==}
 
   cli-cursor@5.0.0:
     resolution: {integrity: sha512-aCj4O5wKyszjMmDT4tZj93kxyydN/K5zPWSCe6/0AV/AA1pqe5ZBIw0a2ZfPQV7lL5/yb5HsUreJ6UFAF1tEQw==}
@@ -4093,6 +4099,8 @@ snapshots:
       readdirp: 4.1.2
 
   chownr@3.0.0: {}
+
+  class-validators@1.0.1: {}
 
   cli-cursor@5.0.0:
     dependencies:
