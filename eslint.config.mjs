@@ -3,7 +3,8 @@ import js from '@eslint/js';
 export default [
   {
     ignores: [
-      '**/types.ts,**/dist/**',
+      '**/types.ts',
+      '**/dist/**',
       '**/build/**',
       '**/.next/**',
       '**/node_modules/**',
