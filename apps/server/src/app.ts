@@ -14,8 +14,6 @@ const app: FastifyPluginAsync<AppOptions> = async (
   fastify,
   opts,
 ): Promise<void> => {
-  fastify.log.info(`Pocket is up and running 🚀`);
-
   void fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'plugins'),
     options: opts,
@@ -27,6 +25,8 @@ const app: FastifyPluginAsync<AppOptions> = async (
     options: opts,
     forceESM: true,
   });
+
+  fastify.log.info(`Pocket is up and running 🚀`);
 };
 
 export default app;

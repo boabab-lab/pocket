@@ -7,9 +7,3 @@ export default fp<SupportPluginOptions>(async (fastify, opts) => {
     return 'hugs';
   });
 });
-
-declare module 'fastify' {
-  export interface FastifyInstance {
-    someSupport(): string;
-  }
-}
