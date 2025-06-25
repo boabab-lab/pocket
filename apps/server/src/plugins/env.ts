@@ -1,19 +1,12 @@
 import fp from 'fastify-plugin';
 import fastifyEnv, { FastifyEnvOptions } from '@fastify/env';
-import { FromSchema } from 'json-schema-to-ts';
+import { Type, Static } from '@sinclair/typebox';
 
-const schema = {
-  type: 'object',
-  required: ['PORT'],
-  properties: {
-    PORT: {
-      type: 'number',
-      default: 8080,
-    },
-  },
-} as const;
+const schema = Type.Object({
+  PORT: Type.Required(Type.Number({ readOnly: true, default: 8080 })),
+});
 
-export type Config = FromSchema<typeof schema>;
+export type Config = Static<typeof schema>;
 
 export default fp<FastifyEnvOptions>(async (fastify) => {
   await fastify.register(fastifyEnv, {
