@@ -2,7 +2,12 @@ import js from '@eslint/js';
 
 export default [
   {
-    ignores: ['**/dist/**', '**/build/**', '**/.next/**', '**/node_modules/**'],
+    ignores: [
+      '**/types.ts,**/dist/**',
+      '**/build/**',
+      '**/.next/**',
+      '**/node_modules/**',
+    ],
     files: ['**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       ecmaVersion: 2021,
