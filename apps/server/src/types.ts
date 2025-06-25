@@ -1,8 +1,8 @@
+import { Config } from './plugins/env.js';
+
 declare module 'fastify' {
   interface FastifyInstance {
-    config: {
-      PORT: string;
-    };
+    config: Config;
     someSupport(): string;
   }
 }
