@@ -8,11 +8,13 @@
     "format": "prettier . --write",
     "lint": "eslint apps/ --ext .ts,.tsx,.js,.jsx",
     "dev:demo": "pnpm --filter demo dev",
+    "start:demo": "pnpm --filter demo start",
     "build:demo": "pnpm --filter demo build",
     "lint:demo": "eslint apps/demo --ext .ts,.tsx",
     "format:demo": "prettier apps/demo --write",
     "dev:server": "pnpm --filter server dev",
     "build:server": "pnpm --filter server build",
+    "start:server": "pnpm --filter server start",
     "lint:server": "eslint apps/server --ext .ts",
     "format:server": "prettier apps/server --write"
   },
