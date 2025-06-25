@@ -8,11 +8,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm run build:ts && tsc -p test/tsconfig.json && FASTIFY_AUTOLOAD_TYPESCRIPT=1 node --test --experimental-test-coverage --loader ts-node/esm test/**/*.ts",
-    "start": "npm run build:ts && fastify start --port 3001 -l info dist/app.js",
+    "test": "pnpm build:ts && tsc -p test/tsconfig.json && FASTIFY_AUTOLOAD_TYPESCRIPT=1 node --test --experimental-test-coverage --loader ts-node/esm test/**/*.ts",
+    "start": "pnpm build:ts && fastify start --port 3001 -l info dist/app.js",
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
-    "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"pnpm:watch:ts\" \"pnpm:dev:start\"",
+    "dev": "pnpm build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"pnpm:watch:ts\" \"pnpm:dev:start\"",
     "dev:start": "fastify start --port 8080 --ignore-watch=.ts$ -w -l info -P dist/app.js"
   },
   "keywords": [],

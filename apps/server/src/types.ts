@@ -1,4 +1,4 @@
-import { Config } from './plugins/env.js';
+import { Config } from './schemas/config.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
