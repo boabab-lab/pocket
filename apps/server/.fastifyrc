@@ -1,0 +1,9 @@
+{
+  "execArgv": ["--loader", "tsx"],
+  "options": {
+    "watch": true,
+    "prettyLogs": true,
+    "ignore-watch": ["*.ts", "*.json"],
+    "port": 3001
+  }
+}
