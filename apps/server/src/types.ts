@@ -6,3 +6,5 @@ declare module 'fastify' {
     someSupport(): string;
   }
 }
+
+export type EnvOptions = 'PROD' | 'DEV' | 'TEST';
