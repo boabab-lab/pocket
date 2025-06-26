@@ -62,8 +62,7 @@ examples/typescript-server.js
 test/types/index.js
 
 .env
-.env.dev
-.env.prod
+.env.*
 
 # compiled app
 dist
