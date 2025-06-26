@@ -1,33 +1,27 @@
 import * as path from 'node:path';
-import AutoLoad, { AutoloadPluginOptions } from '@fastify/autoload';
-import { FastifyPluginAsync } from 'fastify';
+import AutoLoad from '@fastify/autoload';
+import fastify from 'fastify';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const app = fastify({ logger: true });
 
-export type AppOptions = {} & Partial<AutoloadPluginOptions>;
+app.register(AutoLoad, {
+  dir: path.join(__dirname, 'plugins'),
+  forceESM: true,
+});
 
-const options: AppOptions = {};
+app.register(AutoLoad, {
+  dir: path.join(__dirname, 'routes'),
+  forceESM: true,
+});
 
-const app: FastifyPluginAsync<AppOptions> = async (
-  fastify,
-  opts,
-): Promise<void> => {
-  void fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
-    options: opts,
-    forceESM: true,
-  });
+app.listen({ port: 8080 }, function (err, address) {
+  if (err) {
+    app.log.error('Error when starting server');
+    process.exit(1);
+  }
 
-  void fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'routes'),
-    options: opts,
-    forceESM: true,
-  });
-
-  fastify.log.info(`Pocket is up and running 🚀`);
-};
-
-export default app;
-export { app, options };
+  app.log.info(`Server is up and running 🏃‍♂️ on PORT: ${address}`);
+});

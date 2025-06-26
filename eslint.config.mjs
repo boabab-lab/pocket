@@ -19,6 +19,15 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        process: true,
+        __dirname: true,
+        __filename: true,
+        Buffer: true,
+        module: true,
+        exports: true,
+        require: true,
+      },
     },
     plugins: {
       '@typescript-eslint': (await import('@typescript-eslint/eslint-plugin'))
