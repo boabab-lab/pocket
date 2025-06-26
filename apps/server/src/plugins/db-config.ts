@@ -13,5 +13,11 @@ export default fp(async (fastify) => {
     password: fastify.config.DB_PASS,
   });
 
-  await fastify.register(dbConn, { connection });
+  try {
+    await fastify.register(dbConn, { connection });
+    fastify.log.info('Connection to DB successful 🚀');
+  } catch (err) {
+    fastify.log.error('Unable to connect to DB ⚠️');
+    fastify.log.error(`Error: ${err}`);
+  }
 });
