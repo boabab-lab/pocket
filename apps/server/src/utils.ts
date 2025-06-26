@@ -1,5 +1,5 @@
 export const loggerConfig = {
-  DEV: {
+  dev: {
     transport: {
       target: 'pino-pretty',
       options: {
@@ -9,6 +9,6 @@ export const loggerConfig = {
       },
     },
   },
-  PROD: true,
-  TEST: false,
+  prod: true,
+  test: false,
 };

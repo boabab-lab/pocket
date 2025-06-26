@@ -7,4 +7,4 @@ declare module 'fastify' {
   }
 }
 
-export type EnvOptions = 'PROD' | 'DEV' | 'TEST';
+export type EnvOptions = 'prod' | 'dev' | 'test';

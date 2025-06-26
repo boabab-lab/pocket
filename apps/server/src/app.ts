@@ -7,7 +7,7 @@ import { EnvOptions } from './types';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const env = (process.env.NODE_ENV as EnvOptions) ?? 'DEV';
+const env = (process.env.NODE_ENV as EnvOptions) ?? 'dev';
 
 const app = fastify({
   logger: loggerConfig[env] ?? true,
@@ -26,7 +26,7 @@ async function main() {
 
   app.listen({ port: app.config.PORT }, function (err, address) {
     if (err) {
-      app.log.error('Error when starting server');
+      app.log.error('Error when starting server 😭');
       process.exit(1);
     }
 

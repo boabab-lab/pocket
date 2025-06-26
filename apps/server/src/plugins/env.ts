@@ -6,6 +6,8 @@ export default fp<FastifyEnvOptions>(async (fastify) => {
   await fastify.register(fastifyEnv, {
     confKey: 'config',
     schema: envSchema,
-    dotenv: true,
+    dotenv: {
+      path: `.env.${process.env.NODE_ENV}`,
+    },
   });
 });
