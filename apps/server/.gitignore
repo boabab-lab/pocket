@@ -61,5 +61,9 @@ profile*
 examples/typescript-server.js
 test/types/index.js
 
+.env
+.env.dev
+.env.prod
+
 # compiled app
 dist
