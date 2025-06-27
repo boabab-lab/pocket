@@ -2,6 +2,7 @@ import fp from 'fastify-plugin';
 import 'reflect-metadata';
 import dbConn from 'typeorm-fastify-plugin';
 import { DataSource } from 'typeorm';
+import { User } from '../entity/user';
 
 export default fp(async (fastify) => {
   const connection = new DataSource({
@@ -11,6 +12,7 @@ export default fp(async (fastify) => {
     database: fastify.config.DB_NAME,
     username: fastify.config.DB_USER,
     password: fastify.config.DB_PASS,
+    entities: [User],
   });
 
   try {
