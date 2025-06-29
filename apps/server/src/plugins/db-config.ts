@@ -4,6 +4,10 @@ import dbConn from 'typeorm-fastify-plugin';
 import { DataSource } from 'typeorm';
 import { User } from '../entity/user';
 
+/*
+ * This plugin connects fastify to a database
+ */
+
 export default fp(async (fastify) => {
   const connection = new DataSource({
     host: fastify.config.DB_HOST,
