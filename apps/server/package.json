@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "pnpm build:ts && tsc -p test/tsconfig.json && FASTIFY_AUTOLOAD_TYPESCRIPT=1 node --test --experimental-test-coverage --loader ts-node/esm test/**/*.ts",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
     "start": "cross-env NODE_ENV=prod pnpm build && node dist/app.js",
     "build": "tsc",
     "dev": "cross-env NODE_ENV=dev tsx watch src/app.ts"
