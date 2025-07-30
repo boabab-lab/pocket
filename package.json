@@ -12,11 +12,13 @@
     "build:demo": "pnpm --filter demo build",
     "lint:demo": "eslint apps/demo --ext .ts,.tsx",
     "format:demo": "prettier apps/demo --write",
+    "test:demo": "pnpm --filter demo test",
     "dev:server": "pnpm --filter server dev",
     "build:server": "pnpm --filter server build",
     "start:server": "pnpm --filter server start",
     "lint:server": "eslint apps/server --ext .ts",
-    "format:server": "prettier apps/server --write"
+    "format:server": "prettier apps/server --write",
+    "test:server": "pnpm --filter server test"
   },
   "keywords": [],
   "author": "",
