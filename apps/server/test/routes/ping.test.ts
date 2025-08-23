@@ -1,15 +1,14 @@
-import test from 'node:test';
+import { test, expect } from 'vitest';
 import { build } from 'helper';
-import * as assert from 'node:assert';
 
-test('ping route', async (t) => {
-  const app = await build(t);
+test('ping route', async () => {
+  const app = await build();
 
   const res = await app.inject({
     method: 'GET',
     url: '/ping',
   });
 
-  assert.equal(res.statusCode, 200);
-  assert.deepStrictEqual(res.json(), { status: 'ok' });
+  expect(res.statusCode).toBe(200);
+  expect(res.json()).toEqual({ status: 'ok' });
 });
