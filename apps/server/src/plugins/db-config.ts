@@ -3,6 +3,8 @@ import 'reflect-metadata';
 import dbConn from 'typeorm-fastify-plugin';
 import { DataSource } from 'typeorm';
 import { User } from '../entity/user';
+import { Pocket } from '../entity/pocket';
+import { Contribution } from '../entity/contribution';
 
 /*
  * This plugin connects fastify to a database
@@ -16,7 +18,9 @@ export default fp(async (fastify) => {
     database: fastify.config.DB_NAME,
     username: fastify.config.DB_USER,
     password: fastify.config.DB_PASS,
-    entities: [User],
+    entities: [User, Pocket, Contribution],
+    synchronize: fastify.config.ENV === 'dev',
+    logging: fastify.config.ENV === 'dev',
   });
 
   try {
