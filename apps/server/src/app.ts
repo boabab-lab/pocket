@@ -20,6 +20,7 @@ async function main() {
   });
 
   await app.register(AutoLoad, {
+    options: { prefix: '/v1' },
     dir: path.join(__dirname, 'routes'),
     forceESM: true,
   });
