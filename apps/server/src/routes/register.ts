@@ -61,7 +61,7 @@ const register: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
           message: 'User succesfully registered.',
           data: newlyCreatedUser,
         });
-      } catch (err) {
+      } catch {
         reply.code(500).send({ message: 'Issue registering User' });
       }
     },
