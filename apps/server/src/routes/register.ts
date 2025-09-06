@@ -24,16 +24,17 @@ const register: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
         done,
       ) => {
         const { firstName, email, passwordHash, lastName } = request.body;
-        fastify.log.error({ firstName, email }, 'Error with input entered:');
         done(
           firstName.length &&
             email.length &&
             passwordHash.length &&
             lastName.length
             ? undefined
-            : reply
-                .code(400)
-                .send('Either your firstname or email or password is invalid.'),
+            : reply.code(400).send({
+                type: 'error',
+                message:
+                  'Either your firstname or email or password is invalid.',
+              }),
         );
       },
     },
@@ -51,9 +52,10 @@ const register: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
         const alreadyExists = await userTable.findOne({ where: { email } });
 
         if (alreadyExists) {
-          reply
-            .status(400)
-            .send({ error: 'User with that email already exists' });
+          reply.status(400).send({
+            type: 'error',
+            message: 'User with that email already exists',
+          });
         }
 
         const newlyCreatedUser = await userTable.save(user);
@@ -62,7 +64,9 @@ const register: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
           data: newlyCreatedUser,
         });
       } catch {
-        reply.code(500).send({ message: 'Issue registering User' });
+        reply
+          .code(500)
+          .send({ type: 'success', message: 'Issue registering User' });
       }
     },
   );
