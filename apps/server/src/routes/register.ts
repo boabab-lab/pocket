@@ -33,7 +33,7 @@ const register: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
             : reply.code(400).send({
                 type: 'error',
                 message:
-                  'Either your firstname or email or password is invalid.',
+                  'Either your firstname, lastname, email or password is invalid.',
               }),
         );
       },
