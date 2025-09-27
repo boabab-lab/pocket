@@ -18,7 +18,9 @@
     "start:server": "pnpm --filter server start",
     "lint:server": "eslint apps/server --ext .ts",
     "format:server": "prettier apps/server --write",
-    "test:server": "pnpm --filter server test"
+    "test:server": "pnpm --filter server test",
+    "build:ui": "pnpm --filter pocket-ui build",
+    "lint:ui": "pnpm --filter pocket-ui lint"
   },
   "keywords": [],
   "author": "",
@@ -43,5 +45,10 @@
     "lint-staged": "^16.1.2",
     "prettier": "^3.6.0",
     "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.1.12"
+    }
   }
 }
