@@ -1,3 +1,22 @@
-@theme {}
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 900;
 
-@source "../dist"
+  /* Figma Colors */
+  --color-dark-pink: #390f1c;
+  --color-pink: #e71354;
+  --color-greyscale-dark-1: #1c1c1c;
+  --color-greyscale-dark-2: #303030;
+  --color-greyscale-light-1: #bcbcbc;
+  --color-greyscale-light-2: #eeeeee;
+  --color-greyscale-medium-3: #808080;
+  --color-greyscale-white: #ffffff;
+}
+
+
+@source "./**/*.{js,jsx,ts,tsx}"
