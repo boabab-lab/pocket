@@ -79,7 +79,7 @@ importers:
         version: 19.1.0(react@19.1.0)
       tailwind-variants:
         specifier: ^3.1.1
-        version: 3.1.1(tailwindcss@4.1.10)
+        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.10)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -199,9 +199,12 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
       tailwind-variants:
         specifier: ^3.1.1
-        version: 3.1.1(tailwindcss@4.1.10)
+        version: 3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.10)
       tailwindcss:
         specifier: ^4
         version: 4.1.10
@@ -4424,6 +4427,9 @@ packages:
   synckit@0.11.8:
     resolution: {integrity: sha512-+XZ+r1XGIJGeQk3VvXhT6xx/VpbHsRzsTkGgF6E5RX9TTXD0118l87puaEBZ566FhqblC6U0d4XnubznJDm30A==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
   tailwind-variants@3.1.1:
     resolution: {integrity: sha512-ftLXe3krnqkMHsuBTEmaVUXYovXtPyTK7ckEfDRXS8PBZx0bAUas+A0jYxuKA5b8qg++wvQ3d2MQ7l/xeZxbZQ==}
@@ -9273,9 +9279,13 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.2.7
 
-  tailwind-variants@3.1.1(tailwindcss@4.1.10):
+  tailwind-merge@3.3.1: {}
+
+  tailwind-variants@3.1.1(tailwind-merge@3.3.1)(tailwindcss@4.1.10):
     dependencies:
       tailwindcss: 4.1.10
+    optionalDependencies:
+      tailwind-merge: 3.3.1
 
   tailwindcss@4.1.10: {}
 
