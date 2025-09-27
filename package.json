@@ -20,6 +20,7 @@
     "format:server": "prettier apps/server --write",
     "test:server": "pnpm --filter server test",
     "build:ui": "pnpm --filter pocket-ui build",
+    "dev:ui": "pnpm --filter pocket-ui dev",
     "lint:ui": "pnpm --filter pocket-ui lint"
   },
   "keywords": [],
