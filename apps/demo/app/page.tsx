@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="">
       <main className="">
-        <Button label="Hello from pocket ui" />
+        <Button label="Button" />
       </main>
     </div>
   );
